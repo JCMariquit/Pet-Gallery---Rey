@@ -1,0 +1,340 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fbe1f2; /* Soft pastel pink */
+    color: #333;
+    line-height: 1.6;
+    padding-top: 80px; /* To offset the sticky header */
+}
+
+/* Sticky Header */
+header {
+    background-color: #f7a8b8; /* Soft pink */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    border-bottom: 2px solid #ff7f92; /* Darker pink border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Lobster', cursive;
+    color: #fff; 
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centering the navigation items */
+    gap: 20px; /* Add space between the navigation items */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff7f92; /* Darker pink */
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    margin-top: 120px; /* Space for sticky header */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #ff6f9f; /* Light pink */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Audio and Video Controls */
+audio, video {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7a8b8; /* Soft pink */
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        text-align: center;
+        flex-direction: row; /* Align navigation links horizontally */
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0 10px; /* Adjust margin for spacing */
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Shrinking header text */
+    h1 {
+        font-size: 1.8em; /* Smaller font size on mobile */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller section headers */
+    }
+
+    /* Adjusting navigation link size for mobile */
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 0.8em; /* Smaller footer text */
+        padding: 10px;
+    }
+}
+
+/* Extra small screen adjustments */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Even smaller header text */
+    }
+
+    h2 {
+        font-size: 1.3em; /* Smaller section headers */
+    }
+
+    nav ul li a {
+        font-size: 0.9em; /* Adjust link size */
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        font-size: 0.7em; /* Even smaller footer text */
+    }
+}
+/* Active navigation link style */
+nav ul li a.active {
+    color: #fff; /* Darker pink for the active link */
+    font-weight: bold; /* Make the active link bold */
+    border-bottom: 3px solid #fff; /* Underline the active link */
+}
+/* Global fade-in animation */
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-out forwards;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for fade-out effect */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Apply to body or main content to animate page load */
+body {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+body.hidden {
+    opacity: 0;
+}#audio {
+    text-align: center;
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center; /* Center the items */
+    gap: 20px; /* Space between audio cards */
+    flex-wrap: wrap; /* Allows wrapping to new lines when needed */
+}
+
+.audio-card {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px; /* Default width for larger screens */
+}
+
+audio {
+    width: 100%; /* Make the audio player take full width of the card */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .audio-container {
+        flex-direction: column; /* Stack the audio cards vertically */
+        align-items: center; /* Center the cards horizontally */
+    }
+
+    .audio-card {
+        width: 90%; /* Reduce the width of the cards on mobile */
+        margin-bottom: 15px; /* Add space between stacked cards */
+    }
+}
+/* Container for the video section */
+#video {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+h2 {
+    font-family: 'Lobster', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Video Card Container - Ensures videos are in rows of two */
+.video-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Video card styling */
+.video-card {
+    width: 100%;
+    max-width: 450px; /* Limit the width of each video card */
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Responsive layout: two videos per row */
+@media (min-width: 600px) {
+    .video-card {
+        width: calc(50% - 20px); /* Two videos per row, considering the gap */
+    }
+}
+
+@media (min-width: 1000px) {
+    .video-card {
+        width: calc(33.33% - 20px); /* Three videos per row on larger screens */
+    }
+}
